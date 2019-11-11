@@ -15,7 +15,7 @@ export function init(preloadState) {
         reducers,
         defaultState
     );
-
+        console.log('-------------------------------')
      // return ReactDOMServer.renderToStaticMarkup(<App store={store} />);
 
     // stream方式，后面再补充
