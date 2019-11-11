@@ -16,5 +16,10 @@ export function init(preloadState) {
         defaultState
     );
 
+     // return ReactDOMServer.renderToStaticMarkup(<App store={store} />);
+
+    // stream方式，后面再补充
+    // return ReactDOMServer.renderToNodeStream(<App store={store} />);
+    // return ReactDOMServer.renderToStaticNodeStream(<App store={store} />);
     return ReactDOMServer.renderToString(<App store={store} />);
 };

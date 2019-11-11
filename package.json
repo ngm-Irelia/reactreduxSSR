@@ -5,9 +5,9 @@
     "main": "./webpack/webpack.config.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "SET NODE_ENV=development&& nodemon server/server",
+        "start": "NODE_ENV=development&& nodemon server/server",
         "server:unix": "export NODE_ENV=development && nodemon server/server",
-        "build": "SET NODE_ENV=production&& webpack --config ./webpack/webpack.config.js --watch --color",
+        "build": "NODE_ENV=production&& webpack --config ./webpack/webpack.config.js --watch --color",
         "build:unix": "export NODE_ENV=production && webpack --config ./webpack/webpack.config.js --watch --color"
     },
     "author": "imwtr",

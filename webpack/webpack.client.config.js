@@ -39,17 +39,14 @@ let clientConfig = {
 
     // 文件入口配置
     entry: {
-        home: './public/static/src/js/home',
-        message: './public/static/src/js/message',
-        homeClient: './public/static/src/js/client/home',
-        messageClient: './public/static/src/js/client/message'
+        homeClient: './public/static/src/js/client/home'
     },
 
     // 文件输出配置
     output: {
         // 输出所在目录
-        path: path.resolve(__dirname, '../public/static/dist/js/'),
-        publicPath: '/public/static/dist/js/',
+        path: path.resolve(__dirname, '../build/js/'),
+        publicPath: '/build/js/',
         // 开发环境使用热更新，方便编译，可以直接不用hash
         filename: '[name].js' + (isProduction ? '?[chunkhash:8]' : ''),
         jsonpFunction: `someJF`
@@ -97,7 +94,7 @@ let clientConfig = {
                     // 设置生成图片的路径名字信息 [path]相对context，outputPath输出的路径，publicPath相应引用的路径
                     name: '[path][name].[ext]?[hash:8]',
                     outputPath: '../',
-                    publicPath: '/public/static/dist/js/' + '../',
+                    publicPath: '/build/js/' + '../',
                 }
             }]
         }, {
@@ -108,7 +105,7 @@ let clientConfig = {
                     // 设置生成字体文件的路径名字信息 [path]相对context，outputPath输出的路径，publicPath相应引用的主路径
                     name: '[path][name].[ext]?[hash:8]',
                     outputPath: '../',
-                    publicPath: '/public/static/dist/js/' + '../',
+                    publicPath: '/build/js/' + '../',
                 }
             }],
         }, {
@@ -140,7 +137,7 @@ let clientConfig = {
 
     // 插件配置
     plugins: [
-        new CleanWebpackPlugin([path.resolve(__dirname, '../public/static/dist/')]),
+        new CleanWebpackPlugin([path.resolve(__dirname, '../build/')]),
         new webpack.HashedModuleIdsPlugin({
             hashFunction: 'sha256',
             hashDigest: 'hex',
@@ -207,34 +204,11 @@ let clientConfig = {
             }]
         }),
 
+        
         new HtmlWebpackPlugin({
-            template: './views/home/home_src.html',
-            filename: '../../../../views/home/home.html',
-            chunks: ['home'],
-            inject: false,
-            alwaysWriteToDisk: true
-        }),
-
-        new HtmlWebpackPlugin({
-            template: './views/message/message_src.html',
-            filename: '../../../../views/message/message.html',
-            chunks: ['message'],
-            inject: false,
-            alwaysWriteToDisk: true
-        }),
-
-        new HtmlWebpackPlugin({
-            template: './views/homeClient/home_src.html',
-            filename: '../../../../views/homeClient/home.html',
+            template: './frame/home_src.html',
+            filename: '../../../../frame/home.html',
             chunks: ['homeClient'],
-            inject: false,
-            alwaysWriteToDisk: true
-        }),
-
-        new HtmlWebpackPlugin({
-            template: './views/messageClient/message_src.html',
-            filename: '../../../../views/messageClient/message.html',
-            chunks: ['messageClient'],
             inject: false,
             alwaysWriteToDisk: true
         }),

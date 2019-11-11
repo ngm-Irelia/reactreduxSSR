@@ -10,7 +10,7 @@
     },
     "watch": [
         "server/",
-        "public/static/distSSR"
+        "build/distSSR"
     ],
     "env": {
         "NODE_ENV": "development"

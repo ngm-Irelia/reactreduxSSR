@@ -21,14 +21,13 @@ let serverConfig = {
 
     // 文件入口配置
     entry: {
-        home: './public/static/src/js/server/home',
-        message: './public/static/src/js/server/message'
+        home: './public/static/src/js/server/home'
     },
 
     // 文件输出配置
     output: {
         // 输出所在目录
-        path: path.resolve(__dirname, '../public/static/distSSR/js/'),
+        path: path.resolve(__dirname, '../build/distSSR/js/'),
         filename: '[name].js',
         library: 'node',
         libraryTarget: 'commonjs2'
@@ -52,7 +51,7 @@ let serverConfig = {
                     // 设置生成图片的路径名字信息 [path]相对context，outputPath输出的路径，publicPath相应引用的路径
                     name: '[path][name].[ext]?[hash:8]',
                     outputPath: '../',
-                    publicPath: '/public/static/distSSR/js/' + '../',
+                    publicPath: '/build/distSSR/js/' + '../',
                 }
             }]
         }, {
@@ -63,7 +62,7 @@ let serverConfig = {
                     // 设置生成字体文件的路径名字信息 [path]相对context，outputPath输出的路径，publicPath相应引用的主路径
                     name: '[path][name].[ext]?[hash:8]',
                     outputPath: '../',
-                    publicPath: '/public/static/distSSR/js/' + '../',
+                    publicPath: '/build/distSSR/js/' + '../',
                 }
             }],
         }, {

@@ -47,7 +47,7 @@ function getData() {
 }
 
 // 编译后的文件路径
-let distPath = '../../public/static/distSSR/js';
+let distPath = '../../build/distSSR/js';
 
 module.exports = function(req, res, next) {
     getDefaultData();
@@ -72,7 +72,7 @@ module.exports = function(req, res, next) {
             console.trace();
         }
 
-        res.render('homeClient/home.html', {
+        res.render('../frame/home.html', {
             appHtml: appHtml,
             preloadState: JSON.stringify(preloadState).replace(/</g, '\\u003c')
         });
